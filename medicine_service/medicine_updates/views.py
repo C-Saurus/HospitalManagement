@@ -27,6 +27,11 @@ def update_quantity(request, id):
     except:
         return Response(
             {"res": "Object with medicine id does not exists"},
+            status=status.HTTP_404_NOT_FOUND,
+        )
+    if (medicine.quantity < request.data.get("quantity", 0)):
+        return Response(
+            {"res": "Object with medicine id does not exists"},
             status=status.HTTP_400_BAD_REQUEST,
         )
     quantity = medicine.quantity - request.data.get("quantity", 0)
