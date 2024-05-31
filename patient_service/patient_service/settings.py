@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'patient_info',
     'patient_updates',
     'patient_type',
-    'patient_status'
+    'patient_status',
+    'patient_rent_info'
 ]
 
 MIDDLEWARE = [
@@ -78,12 +79,12 @@ WSGI_APPLICATION = 'patient_service.wsgi.application'
 
 DATABASES = {
     "default": {
-        "ENGINE": "djongo",
+        "ENGINE": "django.db.backends.mysql",
         "NAME": "patient_service",
-        "ENFORCE_SCHEMA": False,
-        "CLIENT": {
-            "host": ""
-        },
+        "USER": "root",
+        "PASSWORD": "12345",
+        "HOST": "localhost",
+        "PORT": "3306",
     },
 }
 

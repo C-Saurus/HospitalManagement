@@ -2,8 +2,8 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
-from patient_info.models import Relatives, Address, Fullname, Item, Status, Type
-from patient_info.serializers import ItemSerializer
+from .models import Relatives, Address, Fullname, Item, Status, Type
+from .serializers import ItemSerializer
 from django.db import transaction
 
 
@@ -72,7 +72,7 @@ def create(request):
         return Response({"error": str(e)}, status=500)
 
 @api_view(["GET"])
-def get_all():
+def get_all(request):
     items = Item.objects.all()
     serializer = ItemSerializer(items, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)

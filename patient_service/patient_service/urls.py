@@ -18,10 +18,12 @@ from patient_info import urls as info_urls
 from patient_status import urls as status_urls
 from patient_type import urls as type_urls
 from patient_updates import urls as updates_urls
+from patient_rent_info import urls as rent_info_urls
 
 urlpatterns = [
     path("info/", include(info_urls)),
     path("status/", include(status_urls)),
     path("type/", include(type_urls)),
     path("updates/", include(updates_urls)),
+    path("rent_info/", include(rent_info_urls)),
 ]

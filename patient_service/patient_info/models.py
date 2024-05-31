@@ -1,4 +1,4 @@
-from djongo import models
+from django.db import models
 
 # Create your models here.
 class Fullname(models.Model):
@@ -27,6 +27,14 @@ class Relatives(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50)
     phone = models.CharField(max_length=20)
+    
+class RentInfo(models.Model):
+    id = models.AutoField(primary_key=True)
+    start_date = models.DateField()
+    end_date = models.DateField(default=None, null=True)
+    bed_id = models.IntegerField()
+    price = models.FloatField(default=None, null=True)
+    patient_id = models.IntegerField()
 
 class Item(models.Model):
     id = models.AutoField(primary_key=True)

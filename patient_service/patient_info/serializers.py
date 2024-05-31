@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Fullname, Item, Type, Address, Status, Relatives
+from .models import Fullname, Item, Type, Address, Status, Relatives, RentInfo
 
 
 class FullnameSerializer(serializers.ModelSerializer):
@@ -40,4 +40,9 @@ class StatusSerializer(serializers.ModelSerializer):
 class RelativesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Relatives
+        fields = "__all__"
+        
+class RentInfoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = RentInfo
         fields = "__all__"
