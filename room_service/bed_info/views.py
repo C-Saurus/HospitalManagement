@@ -65,6 +65,11 @@ def update_status(request, id):
     except:
         return Response(
             {"res": "Object with bed id does not exists"},
+            status=status.HTTP_404_NOT_FOUND,
+        )
+    if (bed.status == request.data.get("status", bed.status) and bed.status == "Busy"):
+        return Response(
+            {"res": "Object with bed is busy"},
             status=status.HTTP_400_BAD_REQUEST,
         )
     bed.status = request.data.get("status", bed.status)
