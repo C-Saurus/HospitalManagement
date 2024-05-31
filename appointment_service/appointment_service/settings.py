@@ -82,7 +82,7 @@ DATABASES = {
         "NAME": "appointment_service",
         "ENFORCE_SCHEMA": False,
         "CLIENT": {
-            "host": "mongodb+srv://DatVuHuu:Matkhaumoi111.@cluster0.bmdxrvy.mongodb.net/?retryWrites=true&w=majority"
+            "host": ""
         },
     },
 }
